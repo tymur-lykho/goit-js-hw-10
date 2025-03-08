@@ -16,6 +16,10 @@
   justify-content: flex-end;
   gap: 40px;
 }
+.main {
+  margin-top: 30px;
+  justify-content: center;
+}
 .nav-link {
   position: relative;
   display: block;
