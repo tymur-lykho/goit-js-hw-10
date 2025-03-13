@@ -30,13 +30,6 @@ const options = {
       });
     }
   },
-  onOpen() {
-    console.log('open');
-    if (timerStarted) {
-      enableTime = false;
-      noCalendar = true;
-    }
-  },
 };
 
 let fp = flatpickr(dateInput, options);
@@ -53,7 +46,6 @@ function startTimer() {
   intervalId = setInterval(onTick, 1000, userSelectedDate);
   timerStarted = true;
   btnActive(false);
-  fp.destroy();
   dateInput.setAttribute('disabled', '');
 }
 
@@ -83,7 +75,6 @@ function onTick(selectDate) {
     clearInterval(intervalId);
     timerStarted = false;
     dateInput.removeAttribute('disabled');
-    fp = flatpickr(dateInput, options);
   }
 }
 
